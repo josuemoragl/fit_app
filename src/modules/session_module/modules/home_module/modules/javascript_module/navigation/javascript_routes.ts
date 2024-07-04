@@ -13,4 +13,5 @@ export const javascriptRoutes = {
   valueOrReferenceLanguage: 'valueOrReferenceLanguage',
   javascriptClosures: 'javascriptClosures',
   javascriptClose: 'javascriptClose',
+  javascriptStrict: 'javascriptStrict',
 };

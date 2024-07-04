@@ -11,6 +11,7 @@ import JavaScriptClosuresScreen from '../screens/javascript_clousures';
 import JavaScriptEqualityScreen from '../screens/javascript_equality';
 import JavaScriptGeneratorsScreen from '../screens/javascript_generators';
 import JavaScriptHoistingScreen from '../screens/javascript_hoisting';
+import JavaScriptStrictScreen from '../screens/javascript_strict';
 import JavaScriptMainScreen from '../screens/main';
 import JavaScriptMapVsForEachScreen from '../screens/map_vs_foreach';
 import JavaScriptNullVsUndefinedScreen from '../screens/null_vs_undefined';
@@ -82,6 +83,10 @@ export default function JavascriptStack() {
       <Stack.Screen
         name={javascriptRoutes.javascriptClose}
         component={JavaScriptCloseFunctionScreen}
+      />
+      <Stack.Screen
+        name={javascriptRoutes.javascriptStrict}
+        component={JavaScriptStrictScreen}
       />
     </Stack.Navigator>
   );

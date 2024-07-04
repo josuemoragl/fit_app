@@ -53,4 +53,8 @@ export const navigationItems = [
     label: 'JavaScript close() function',
     navigate: javascriptRoutes.javascriptClose,
   },
+  {
+    label: 'JavaScript strict directive',
+    navigate: javascriptRoutes.javascriptStrict,
+  },
 ];
