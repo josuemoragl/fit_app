@@ -27,7 +27,7 @@ import {
   Brightness,
   ThemeData,
 } from './src/common/presentation/theme/themeData/interfaces';
-import {supabase} from './src/supabase';
+import useSupabase from './src/supabase';
 
 const client = new ApolloClient({
   uri: 'https://beta.pokeapi.co/graphql/v1beta',
@@ -81,7 +81,9 @@ function ThemeWrapper(): React.ReactElement {
 
 export default function AppWrapper(): React.ReactElement {
   const [_, setSession] = useAtom(sessionAtom);
+  const {init} = useSupabase();
   useEffect(() => {
+    const supabase = init();
     supabase.auth
       .getSession()
       .then(({data: {session}}) => {
@@ -105,6 +107,7 @@ export default function AppWrapper(): React.ReactElement {
         setSession(defaultSession);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setSession]);
 
   return (
