@@ -3,7 +3,7 @@ import {atom} from 'jotai';
 import {Session} from '@supabase/supabase-js';
 
 export const defaultSession: UserSession = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   session: {
     access_token: '',
     refresh_token: '',

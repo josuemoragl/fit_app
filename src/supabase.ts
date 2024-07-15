@@ -7,10 +7,10 @@ import {createClient} from '@supabase/supabase-js';
 import 'react-native-url-polyfill/auto';
 
 export default function useSupabase() {
-  console.log({SUPABASE_URL, SUPABASE_KEY});
-
+  let supabase: any;
   const init = () => {
-    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+    console.log({SUPABASE_KEY, SUPABASE_URL});
+    supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
       auth: {
         storage: AsyncStorage,
         autoRefreshToken: true,
@@ -31,7 +31,15 @@ export default function useSupabase() {
     return supabase;
   };
 
+  const getSupabase = () => {
+    if (!supabase) {
+      return init();
+    }
+    return supabase;
+  };
+
   return {
     init,
+    getSupabase,
   };
 }

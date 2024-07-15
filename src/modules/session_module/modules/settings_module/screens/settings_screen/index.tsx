@@ -11,12 +11,13 @@ import LoaderModal from '../../../../../../common/presentation/components/molecu
 import {useTheme} from '../../../../../../common/presentation/theme';
 import useToggleTheme from '../../../../../../common/presentation/theme/hooks/use_toggle_theme';
 import {Brightness} from '../../../../../../common/presentation/theme/themeData/interfaces';
-import {supabase} from '../../../../../../supabase';
+import useSupabase from '../../../../../../supabase';
 
 import SwitchTheme from './components/swith_theme';
 
 const SettingsScreen = () => {
   const [_, setSession] = useAtom(sessionAtom);
+  const {getSupabase} = useSupabase();
 
   const loaderModalRef = useRef<any>();
 
@@ -30,6 +31,7 @@ const SettingsScreen = () => {
   const handleSignOut = async () => {
     try {
       loaderModalRef?.current.toggleModal();
+      const supabase = getSupabase();
       await supabase.auth.signOut();
       setSession(defaultSession);
       loaderModalRef?.current.toggleModal();

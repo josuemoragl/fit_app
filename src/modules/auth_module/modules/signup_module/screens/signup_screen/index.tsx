@@ -1,16 +1,19 @@
 // SignUpScreen.js
 import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
-import {TextInput, Button} from 'react-native-paper';
-import {supabase} from '../../../../../../supabase';
+import {StyleSheet, View} from 'react-native';
+import {Button, TextInput} from 'react-native-paper';
+
 import Header from '../../../../../../common/presentation/components/molecules/appbar';
+import useSupabase from '../../../../../../supabase';
 
 const SignUpScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {getSupabase} = useSupabase();
 
   const handleSignUp = async () => {
     try {
+      const supabase = getSupabase();
       const {error} = await supabase.auth.signUp({email, password});
       if (error) {
         throw error;

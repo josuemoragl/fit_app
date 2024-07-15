@@ -21,6 +21,7 @@
     "@react-navigation/native-stack": "^6.9.26",
     "@supabase/supabase-js": "^2.42.0",
     "eslint-plugin-simple-import-sort": "^12.0.0",
+    "formik": "^2.4.6",
     "graphql": "^16.8.1",
     "jotai": "^2.8.0",
     "lodash": "^4.17.21",
@@ -37,7 +38,8 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "13.4.0",
     "react-native-url-polyfill": "^2.0.0",
-    "react-native-vector-icons": "^10.0.3"
+    "react-native-vector-icons": "^10.0.3",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

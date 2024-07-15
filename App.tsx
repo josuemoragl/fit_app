@@ -81,12 +81,12 @@ function ThemeWrapper(): React.ReactElement {
 
 export default function AppWrapper(): React.ReactElement {
   const [_, setSession] = useAtom(sessionAtom);
-  const {init} = useSupabase();
+  const {getSupabase} = useSupabase();
   useEffect(() => {
-    const supabase = init();
+    const supabase = getSupabase();
     supabase.auth
       .getSession()
-      .then(({data: {session}}) => {
+      .then(({data: {session}}: any) => {
         if (session) {
           setSession({isLoggedIn: true, session});
         }
@@ -100,7 +100,7 @@ export default function AppWrapper(): React.ReactElement {
         }, 1000);
       });
 
-    supabase.auth.onAuthStateChange((_event, session) => {
+    supabase.auth.onAuthStateChange((_event: any, session: any) => {
       if (session) {
         setSession({isLoggedIn: true, session});
       } else {
