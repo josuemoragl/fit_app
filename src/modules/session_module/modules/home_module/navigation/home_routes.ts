@@ -6,4 +6,6 @@ export const homeRoutes = {
   javascriptExplanations: 'javascript_explanations',
   javaScriptEquality: 'javascript_equality',
   javascriptMain: 'javascript_main',
+  uiLibrariesMain: 'uiLibrariesMain',
+  uiLibrariesModule: 'uiLibrariesModule',
 };

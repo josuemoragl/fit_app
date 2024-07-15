@@ -89,6 +89,9 @@ export default function AppWrapper(): React.ReactElement {
           setSession({isLoggedIn: true, session});
         }
       })
+      .catch((e: any) => {
+        console.log({e});
+      })
       .finally(() => {
         setTimeout(() => {
           SplashScreen.hide();

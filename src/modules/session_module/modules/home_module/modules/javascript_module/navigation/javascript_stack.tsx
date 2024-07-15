@@ -26,7 +26,7 @@ const Stack = createNativeStackNavigator();
 export default function JavascriptStack() {
   return (
     <Stack.Navigator
-      screenOptions={headerNoBackTitleOptions}
+      screenOptions={{...headerNoBackTitleOptions, headerShown: true}}
       initialRouteName={javascriptRoutes.main}>
       <Stack.Screen
         name={javascriptRoutes.main}

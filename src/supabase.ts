@@ -5,9 +5,8 @@ import {createClient} from '@supabase/supabase-js';
 
 import 'react-native-url-polyfill/auto';
 
-const supabaseUrl = 'https://pikdlgytetkziekyburp.supabase.co';
-const supabaseAnonKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpa2RsZ3l0ZXRremlla3lidXJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI3ODY4NzgsImV4cCI6MjAyODM2Mjg3OH0.C-sM1SNu8KC73pC0uPOCG6MQVo7h1QEpQdazH12Crjg';
+const supabaseUrl = process.env.SUPBASE_URL || '';
+const supabaseAnonKey = process.env.SUPABASE_KEY || '';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
